@@ -7,7 +7,7 @@ function zipArrsToObj(arr1, arr2) {
 		console.log('Arrays must be of same length')
 		return obj;
 	}
-	for (var i = 0; i < cols.length; i++) {
+	for (var i = 0; i < arr1.length; i++) {
 		obj[arr1[i]] = arr2[i];
 	}
 	return obj;

@@ -9,9 +9,15 @@ router.get('/', (req, res) => {
 	});
 });
 
+router.get('/api/burgers', (req, res) => {
+	burger.all(data => {
+		res.status(200).json(data);
+	});
+});
+
 router.post('/api/burgers', (req, res) => {
-	burger.create(['burger_name', 'devoured'], [req.body.name, req.body.devoured], result => {
-		res.json({id: result.insertId});
+	burger.create(['burger_name', 'devoured'], [req.body.burger_name, req.body.devoured], result => {
+		res.status(201).json({id: result.insertId});
 	});
 });
 
@@ -21,7 +27,7 @@ router.post('/api/burgers/:id', (req, res) => {
 			return res.status(404).end();
 		}
 		else {
-			res.status(201).send();
+			res.status(200).send();
 		}
 	});
 });
