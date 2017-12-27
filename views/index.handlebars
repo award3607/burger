@@ -1,0 +1,21 @@
+<h1>Burgers</h1>
+
+<ul>
+	{{#each burgers}}
+	<li>
+		<p>Name: {{burger_name}}</p>
+		<p>Devoured: {{devoured}}</p>
+		{{#unless devoured}}
+		<button id="{{id}}">Devour it</button>
+		{{/unless}}
+	</li>
+	{{/each}}
+</ul>
+
+<form class="create-form">
+	<div class="form-group">
+		<label for="new-burger">New burger</label>
+		<input type="text" id="new-burger" name="new-burger" />
+	</div>
+	<button id="add-burger">Add burger</button>
+</form>
